@@ -1,6 +1,3 @@
-import "@fontsource/poppins";
-import "@fontsource/poppins/700.css";
-import "@fontsource/nunito-sans";
 declare const theme: {
     colors: {
         primary: string;

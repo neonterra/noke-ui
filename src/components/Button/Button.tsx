@@ -4,7 +4,7 @@ import { ButtonProps, StyledButton } from "./StyledButton";
 
 
 // NokeButton component
-const NokeButton: FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   variant = "primary",
   colorScheme = "standardBG", // Renamed prop from "theme" to avoid conflict
   hovered = false,
@@ -17,4 +17,4 @@ const NokeButton: FC<ButtonProps> = ({
   );
 };
 
-export default NokeButton;
+export default Button;

@@ -1,7 +1,7 @@
 // src/theme.ts
-import "@fontsource/poppins"; // Defaults to weight 400
-import "@fontsource/poppins/700.css"; // Bold weight
-import "@fontsource/nunito-sans"; // Defaults to weight 400
+//import "@fontsource/poppins"; // Defaults to weight 400
+//import "@fontsource/poppins/700.css"; // Bold weight
+//import "@fontsource/nunito-sans"; // Defaults to weight 400
 
 const theme = {
   colors: {

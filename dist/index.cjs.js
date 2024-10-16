@@ -1,7 +1,27 @@
-import * as React from 'react';
-import React__default, { forwardRef, useContext } from 'react';
-import { ThemeProvider, useTheme, css } from '@emotion/react';
-import styled from '@emotion/styled';
+'use strict';
+
+var React = require('react');
+var react = require('@emotion/react');
+var styled = require('@emotion/styled');
+
+function _interopNamespaceDefault(e) {
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () { return e[k]; }
+        });
+      }
+    });
+  }
+  n.default = e;
+  return Object.freeze(n);
+}
+
+var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
 
 var jsxRuntime = {exports: {}};
 
@@ -22,7 +42,7 @@ var hasRequiredReactJsxRuntime_production_min;
 function requireReactJsxRuntime_production_min () {
 	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
 	hasRequiredReactJsxRuntime_production_min = 1;
-var f=React__default,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
+var f=React,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
 	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
 	return reactJsxRuntime_production_min;
 }
@@ -48,7 +68,7 @@ function requireReactJsxRuntime_development () {
 	if (process.env.NODE_ENV !== "production") {
 	  (function() {
 
-	var React = React__default;
+	var React$1 = React;
 
 	// ATTENTION
 	// When adding new symbols to this file,
@@ -83,7 +103,7 @@ function requireReactJsxRuntime_development () {
 	  return null;
 	}
 
-	var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+	var ReactSharedInternals = React$1.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
 	function error(format) {
 	  {
@@ -1433,7 +1453,7 @@ const theme = {
 };
 
 const withThemeProvider = (Component) => {
-    return (props) => (jsxRuntimeExports.jsx(ThemeProvider, { theme: theme, children: jsxRuntimeExports.jsx(Component, { ...props }) }));
+    return (props) => (jsxRuntimeExports.jsx(react.ThemeProvider, { theme: theme, children: jsxRuntimeExports.jsx(Component, { ...props }) }));
 };
 
 var isDevelopment$2 = false;
@@ -3481,7 +3501,7 @@ var syncFallback = function syncFallback(create) {
   return create();
 };
 
-var useInsertionEffect = React['useInsertion' + 'Effect'] ? React['useInsertion' + 'Effect'] : false;
+var useInsertionEffect = React__namespace['useInsertion' + 'Effect'] ? React__namespace['useInsertion' + 'Effect'] : false;
 var useInsertionEffectAlwaysWithSyncFallback = !isBrowser$1 ? syncFallback : useInsertionEffect || syncFallback;
 
 var isDevelopment = false;
@@ -3491,7 +3511,7 @@ var isBrowser = typeof document !== 'undefined';
 /* import { type EmotionCache } from '@emotion/utils' */
 var EmotionCacheContext
 /*: React.Context<EmotionCache | null> */
-= /* #__PURE__ */React.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
+= /* #__PURE__ */React__namespace.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
 // because this module is primarily intended for the browser and node
 // but it's also required in react native and similar environments sometimes
 // and we could have a special build just for that
@@ -3510,13 +3530,13 @@ var withEmotionCache = function withEmotionCache
 )
 /*: React.AbstractComponent<Props> */
 {
-  return /*#__PURE__*/forwardRef(function (props
+  return /*#__PURE__*/React.forwardRef(function (props
   /*: Props */
   , ref
   /*: Ref */
   ) {
     // the cache will never be null in the browser
-    var cache = useContext(EmotionCacheContext);
+    var cache = React.useContext(EmotionCacheContext);
     return func(props, cache, ref);
   });
 };
@@ -3532,7 +3552,7 @@ if (!isBrowser) {
     return function (props
     /*: Props */
     ) {
-      var cache = useContext(EmotionCacheContext);
+      var cache = React.useContext(EmotionCacheContext);
 
       if (cache === null) {
         // yes, we're potentially creating this on every render
@@ -3543,7 +3563,7 @@ if (!isBrowser) {
         cache = createCache({
           key: 'css'
         });
-        return /*#__PURE__*/React.createElement(EmotionCacheContext.Provider, {
+        return /*#__PURE__*/React__namespace.createElement(EmotionCacheContext.Provider, {
           value: cache
         }, func(props, cache));
       } else {
@@ -3553,7 +3573,7 @@ if (!isBrowser) {
   };
 }
 
-var ThemeContext = /* #__PURE__ */React.createContext({});
+var ThemeContext = /* #__PURE__ */React__namespace.createContext({});
 
 var hasOwn = {}.hasOwnProperty;
 
@@ -3599,7 +3619,7 @@ var Insertion = function Insertion(_ref) {
       next = next.next;
     }
 
-    return /*#__PURE__*/React.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
+    return /*#__PURE__*/React__namespace.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
       __html: rules
     }, _ref2.nonce = cache.sheet.nonce, _ref2));
   }
@@ -3628,7 +3648,7 @@ function (props, cache, ref) {
     className = props.className + " ";
   }
 
-  var serialized = serializeStyles(registeredStyles, undefined, React.useContext(ThemeContext));
+  var serialized = serializeStyles(registeredStyles, undefined, React__namespace.useContext(ThemeContext));
 
   className += cache.key + "-" + serialized.name;
   var newProps = {};
@@ -3645,11 +3665,11 @@ function (props, cache, ref) {
     newProps.ref = ref;
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Insertion, {
+  return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Insertion, {
     cache: cache,
     serialized: serialized,
     isStringTag: typeof WrappedComponent === 'string'
-  }), /*#__PURE__*/React.createElement(WrappedComponent, newProps));
+  }), /*#__PURE__*/React__namespace.createElement(WrappedComponent, newProps));
 });
 
 var Emotion$1 = Emotion;
@@ -3664,7 +3684,7 @@ function jsx(type, props, key) {
 
 const ButtonStyles = (theme) => ({
     primary: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.secondaryDark
             : theme.colors.secondary};
@@ -3675,7 +3695,7 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.secondaryDark};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.secondary
             : theme.colors.white};
@@ -3689,7 +3709,7 @@ const ButtonStyles = (theme) => ({
         color: ${theme.colors.white};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.secondary};
       border: ${isHovered ? `2px solid ${theme.colors.white}` : "none"};
@@ -3702,7 +3722,7 @@ const ButtonStyles = (theme) => ({
     `,
     },
     secondary: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.secondaryLight
             : theme.colors.white};
@@ -3713,7 +3733,7 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.secondaryLight};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.white
             : theme.colors.secondary};
@@ -3725,7 +3745,7 @@ const ButtonStyles = (theme) => ({
         color: ${theme.colors.primary};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.white : theme.colors.primary};
       color: ${isHovered ? theme.colors.secondary : theme.colors.white};
       border: ${isHovered ? "none" : `2px solid ${theme.colors.white}`};
@@ -3737,7 +3757,7 @@ const ButtonStyles = (theme) => ({
     `,
     },
     "primary-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.primaryDark
             : theme.colors.primary};
@@ -3748,7 +3768,7 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryDark};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.white}` : "none"};
@@ -3757,7 +3777,7 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryDark};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.white : theme.colors.secondary};
       color: ${isHovered ? theme.colors.secondary : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.secondary}` : "none"};
@@ -3770,7 +3790,7 @@ const ButtonStyles = (theme) => ({
     `,
     },
     "secondary-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered
             ? theme.colors.primaryLight
             : theme.colors.white};
@@ -3781,19 +3801,19 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryLight};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.primary}` : "none"};
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: 2px solid ${theme.colors.primary};
     `,
     },
     text: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.gray : "transparent"};
       color: ${theme.colors.secondary};
       border: none;
@@ -3802,7 +3822,7 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.gray};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.white : "transparent"};
       color: ${isHovered ? theme.colors.primary : theme.colors.white};
       border: none;
@@ -3812,7 +3832,7 @@ const ButtonStyles = (theme) => ({
         color: ${theme.colors.primary};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.white : "transparent"};
       color: ${isHovered ? theme.colors.secondary : theme.colors.white};
       border: none;
@@ -3824,7 +3844,7 @@ const ButtonStyles = (theme) => ({
     `,
     },
     "text-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.gray : "transparent"};
       color: ${theme.colors.primary};
       border: none;
@@ -3833,11 +3853,11 @@ const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.gray};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primaryLight : "transparent"};
       color: ${theme.colors.primary};
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => react.css `
       background-color: ${isHovered ? theme.colors.primary : "transparent"};
       color: ${theme.colors.primary};
     `,
@@ -3853,7 +3873,7 @@ const StyledButton = styled.button `
   font-weight: 600;
 
   ${(props) => {
-    const theme = useTheme();
+    const theme = react.useTheme();
     const variant = props.variant || "primary";
     const colorScheme = props.colorScheme || "standardBG";
     return ButtonStyles(theme)[variant][colorScheme](props.hovered || false);
@@ -3873,63 +3893,63 @@ const getComponentTag = (variant) => {
 const getVariantStyles = (theme, variant) => {
     switch (variant) {
         case 'h1':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.headingXxl};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.2;
         `;
         case 'h2':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.headingXl};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.3;
         `;
         case 'h3':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.headingLg};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.3;
         `;
         case 'h4':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.headingMd};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.4;
         `;
         case 'h5':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.bodyReg};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.4;
         `;
         case 'h6':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.bodyReg};
           font-weight: ${theme.typography.weight.bold};
           line-height: 1.4;
         `;
         case 'body1':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.bodyLg};
           font-weight: ${theme.typography.weight.normal};
           line-height: 1.5;
         `;
         case 'body2':
-            return css `
+            return react.css `
           font-size: ${theme.typography.size.bodySm};
           font-weight: ${theme.typography.weight.normal};
           line-height: 1.5;
         `;
         default:
-            return css ``;
+            return react.css ``;
     }
 };
 const BODY_TEXT_LINE_HEIGHT = 1.5;
 
 const Typography = ({ variant, children, color = 'black' }) => {
-    const theme = useTheme();
+    const theme = react.useTheme();
     const Component = getComponentTag(variant);
-    return (jsx(Component, { css: css `
+    return (jsx(Component, { css: react.css `
         ${getVariantStyles(theme, variant)}
         color: ${theme.colors[color] || theme.colors.black};
       `, children: children }));
@@ -3945,40 +3965,40 @@ const H5 = ({ color, children }) => (jsx(Heading, { variant: "h5", color: color,
 const H6 = ({ color, children }) => (jsx(Heading, { variant: "h6", color: color, children: children }));
 
 const Text = ({ variant = "body-regular", children, color = "textPrimary", }) => {
-    const theme = useTheme();
+    const theme = react.useTheme();
     const getStyles = (variant) => {
         const selectedColor = theme.colors[color];
         switch (variant) {
             case "body-large":
-                return css `
+                return react.css `
           font-size: ${theme.typography.size.headingMd};
           font-weight: ${theme.typography.weight.normal};
           line-height: ${BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             case "body-regular":
-                return css `
+                return react.css `
           font-size: ${theme.typography.size.bodyReg};
           font-weight: ${theme.typography.weight.normal};
           line-height: ${BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             case "body-small":
-                return css `
+                return react.css `
           font-size: ${theme.typography.size.bodyRegSm};
           font-weight: ${theme.typography.weight.normal};
           line-height: ${BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             default:
-                return css ``;
+                return react.css ``;
         }
     };
     return jsx("p", { css: getStyles(variant), children: children });
 };
 
 const Sample = () => {
-    return (jsx("h1", { css: css `
+    return (jsx("h1", { css: react.css `
          color: red; // Use theme colors
        `, children: "I am a sample component 1." }));
 };
@@ -3987,5 +4007,14 @@ const ThemedButton = withThemeProvider(Button);
 const ThemedHeading = withThemeProvider(Typography);
 const ThemedText = withThemeProvider(Text);
 
-export { ThemedButton as Button, H1, H2, H3, H4, H5, H6, ThemedHeading as Heading, Sample, ThemedText as Text };
-//# sourceMappingURL=index.js.map
+exports.Button = ThemedButton;
+exports.H1 = H1;
+exports.H2 = H2;
+exports.H3 = H3;
+exports.H4 = H4;
+exports.H5 = H5;
+exports.H6 = H6;
+exports.Heading = ThemedHeading;
+exports.Sample = Sample;
+exports.Text = ThemedText;
+//# sourceMappingURL=index.cjs.js.map

@@ -1,51 +1,46 @@
 {
   "name": "noke-ui",
-  "version": "1.0.0",
-  "description": "A UI component library for React",
-  "main": "dist/index.js",
+  "version": "1.2.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "exports": {
-    "./*": {
-      "import": "./dist/components/*/index.js",
-      "require": "./dist/components/*/index.cjs"
-    },
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && tsc",
-    "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx"
+    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx",
+    "version:bump:patch": "npm version patch",  
+    "version:bump:minor": "npm version minor", 
+    "version:bump:major": "npm version major",  
+    "prepublish": "npm run build",              
+    "publish:patch": "npm run version:bump:patch && npm publish",
+    "publish:minor": "npm run version:bump:minor && npm publish",
+    "publish:major": "npm run version:bump:major && npm publish"
   },
-  "author": "Neonterra <neonterras@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/neonterra/noke-ui.git"
-  },
-  "homepage": "https://github.com/neonterra/noke-ui#readme",
-  "bugs": {
-    "url": "https://github.com/neonterra/noke-ui/issues"
+  "peerDependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@fontsource/nunito-sans": "^5.1.0",
     "@fontsource/poppins": "^5.1.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.11",
     "nodemon": "^3.1.7",
     "rimraf": "^4.1.2",
+    "rollup": "^4.24.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.1.6"
-  },
-  "peerDependencies": {
-    "@fontsource/nunito-sans": "^5.1.0",
-    "@fontsource/poppins": "^5.1.0",
-    "react": "^18.2.0"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0"
   }
 }
