@@ -7,9 +7,9 @@ const Sample: React.FC = () => {
 
   return (
     <h1
-       css={css`
+      /*  css={css`
          color: red; // Use theme colors
-       `}
+       `} */
     >
       I am a sample component 1.
     </h1>

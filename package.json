@@ -18,7 +18,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "build": "npm run clean && tsc",
     "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx",
     "version:bump:patch": "npm version patch",
     "version:bump:minor": "npm version minor",
