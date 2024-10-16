@@ -2,18 +2,24 @@
   "name": "noke-ui",
   "version": "1.0.0",
   "description": "A UI component library for React",
-  "main": "dist/index.js", 
+  "main": "dist/index.js",
   "files": [
-    "dist" 
+    "dist"
   ],
-  "exports": { 
+  "exports": {
+    "./*": {
+      "import": "./dist/components/*/index.js",
+      "require": "./dist/components/*/index.cjs"
+    },
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsc" 
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx"
   },
   "author": "Neonterra <neonterras@gmail.com>",
   "license": "MIT",
@@ -26,9 +32,20 @@
     "url": "https://github.com/neonterra/noke-ui/issues"
   },
   "devDependencies": {
+    "@fontsource/nunito-sans": "^5.1.0",
+    "@fontsource/poppins": "^5.1.0",
+    "@types/react": "^18.3.11",
+    "nodemon": "^3.1.7",
+    "rimraf": "^4.1.2",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "react": "^18.2.0" 
+    "@fontsource/nunito-sans": "^5.1.0",
+    "@fontsource/poppins": "^5.1.0",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0"
   }
 }
