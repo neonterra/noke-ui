@@ -15,7 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "build": "npm run clean && tsc",
     "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx",
     "version:bump:patch": "npm version patch",
     "version:bump:minor": "npm version minor",
@@ -34,13 +34,9 @@
   "devDependencies": {
     "@fontsource/nunito-sans": "^5.1.0",
     "@fontsource/poppins": "^5.1.0",
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.11",
     "nodemon": "^3.1.7",
     "rimraf": "^4.1.2",
-    "rollup": "^4.24.0",
-    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.1.6"
   }
 }
