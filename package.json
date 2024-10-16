@@ -1,6 +1,6 @@
 {
   "name": "noke-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "files": [
@@ -17,10 +17,10 @@
     "clean": "rimraf dist",
     "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
     "watch": "nodemon --watch 'src/**/*' --exec 'npm run build' --ext ts,tsx",
-    "version:bump:patch": "npm version patch",  
-    "version:bump:minor": "npm version minor", 
-    "version:bump:major": "npm version major",  
-    "prepublish": "npm run build",              
+    "version:bump:patch": "npm version patch",
+    "version:bump:minor": "npm version minor",
+    "version:bump:major": "npm version major",
+    "prepublish": "npm run build",
     "publish:patch": "npm run version:bump:patch && npm publish",
     "publish:minor": "npm run version:bump:minor && npm publish",
     "publish:major": "npm run version:bump:major && npm publish"
