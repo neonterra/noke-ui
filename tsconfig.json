@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",               // Targeting modern JavaScript (ES2020)
-    "module": "ESNext",               // Using ESNext module resolution
+   // "module": "ESNext",               // Using ESNext module resolution
     "lib": ["DOM", "ES2020"],         // Include DOM and ES2020 library support
     "jsx": "react-jsx",               // For React 17+ JSX transform
     "moduleResolution": "node",       // Node-style module resolution
@@ -10,19 +10,15 @@
     "forceConsistentCasingInFileNames": true, // Ensures consistent casing
     "strict": true,                   // Enable all strict type checking options
 
-    // Output options
     "rootDir": "./src",               // Specifies the root directory of input files
     "outDir": "./dist",               // Specifies the output directory for compiled files
     "declaration": true,              // Generates .d.ts declaration files
     "declarationDir": "./dist",       // Output directory for declaration files
     "removeComments": true,           // Removes comments from the output files
-
-    // New Option: Source Map generation for easier debugging
     "sourceMap": true,                // Generates source maps for easier debugging
-
-    // Preserve import/export semantics from the package for bundling and usage
-    "preserveSymlinks": true
+    "preserveSymlinks": true,         // Preserve symbolic links
+    "module": "commonjs"              // CommonJS modules for Node.js
   },
-  "include": ["src"],                 // Includes only the src directory for compilation
-  "exclude": ["node_modules", "dist"] // Excludes node_modules and dist from compilation
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

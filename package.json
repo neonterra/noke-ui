@@ -7,13 +7,10 @@
     "dist"
   ],
   "exports": {
-    "./*": {
-      "import": "./dist/components/*/index.js",
-      "require": "./dist/components/*/index.cjs"
-    },
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
@@ -37,13 +34,9 @@
   "devDependencies": {
     "@fontsource/nunito-sans": "^5.1.0",
     "@fontsource/poppins": "^5.1.0",
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.11",
     "nodemon": "^3.1.7",
     "rimraf": "^4.1.2",
-    "rollup": "^4.24.0",
-    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.1.6"
   }
 }

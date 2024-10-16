@@ -1,8 +1,14 @@
-import { css, useTheme } from "@emotion/react";
-import styled from "@emotion/styled";
-export const ButtonStyles = (theme) => ({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StyledButton = exports.ButtonStyles = void 0;
+const react_1 = require("@emotion/react");
+const styled_1 = __importDefault(require("@emotion/styled"));
+const ButtonStyles = (theme) => ({
     primary: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.secondaryDark
             : theme.colors.secondary};
@@ -13,7 +19,7 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.secondaryDark};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.secondary
             : theme.colors.white};
@@ -27,7 +33,7 @@ export const ButtonStyles = (theme) => ({
         color: ${theme.colors.white};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.secondary};
       border: ${isHovered ? `2px solid ${theme.colors.white}` : "none"};
@@ -40,7 +46,7 @@ export const ButtonStyles = (theme) => ({
     `,
     },
     secondary: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.secondaryLight
             : theme.colors.white};
@@ -51,7 +57,7 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.secondaryLight};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.white
             : theme.colors.secondary};
@@ -63,7 +69,7 @@ export const ButtonStyles = (theme) => ({
         color: ${theme.colors.primary};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.white : theme.colors.primary};
       color: ${isHovered ? theme.colors.secondary : theme.colors.white};
       border: ${isHovered ? "none" : `2px solid ${theme.colors.white}`};
@@ -75,7 +81,7 @@ export const ButtonStyles = (theme) => ({
     `,
     },
     "primary-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.primaryDark
             : theme.colors.primary};
@@ -86,7 +92,7 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryDark};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.white}` : "none"};
@@ -95,7 +101,7 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryDark};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.white : theme.colors.secondary};
       color: ${isHovered ? theme.colors.secondary : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.secondary}` : "none"};
@@ -108,7 +114,7 @@ export const ButtonStyles = (theme) => ({
     `,
     },
     "secondary-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered
             ? theme.colors.primaryLight
             : theme.colors.white};
@@ -119,19 +125,19 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.primaryLight};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: ${isHovered ? `2px solid ${theme.colors.primary}` : "none"};
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primary : theme.colors.white};
       color: ${isHovered ? theme.colors.white : theme.colors.primary};
       border: 2px solid ${theme.colors.primary};
     `,
     },
     text: {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.gray : "transparent"};
       color: ${theme.colors.secondary};
       border: none;
@@ -140,7 +146,7 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.gray};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.white : "transparent"};
       color: ${isHovered ? theme.colors.primary : theme.colors.white};
       border: none;
@@ -150,7 +156,7 @@ export const ButtonStyles = (theme) => ({
         color: ${theme.colors.primary};
       }
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.white : "transparent"};
       color: ${isHovered ? theme.colors.secondary : theme.colors.white};
       border: none;
@@ -162,7 +168,7 @@ export const ButtonStyles = (theme) => ({
     `,
     },
     "text-alt": {
-        standardBG: (isHovered) => css `
+        standardBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.gray : "transparent"};
       color: ${theme.colors.primary};
       border: none;
@@ -171,17 +177,18 @@ export const ButtonStyles = (theme) => ({
         background-color: ${theme.colors.gray};
       }
     `,
-        primaryBG: (isHovered) => css `
+        primaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primaryLight : "transparent"};
       color: ${theme.colors.primary};
     `,
-        secondaryBG: (isHovered) => css `
+        secondaryBG: (isHovered) => (0, react_1.css) `
       background-color: ${isHovered ? theme.colors.primary : "transparent"};
       color: ${theme.colors.primary};
     `,
     },
 });
-export const StyledButton = styled.button `
+exports.ButtonStyles = ButtonStyles;
+exports.StyledButton = styled_1.default.button `
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 25px;
@@ -191,10 +198,10 @@ export const StyledButton = styled.button `
   font-weight: 600;
 
   ${(props) => {
-    const theme = useTheme();
+    const theme = (0, react_1.useTheme)();
     const variant = props.variant || "primary";
     const colorScheme = props.colorScheme || "standardBG";
-    return ButtonStyles(theme)[variant][colorScheme](props.hovered || false);
+    return (0, exports.ButtonStyles)(theme)[variant][colorScheme](props.hovered || false);
 }}
 `;
 //# sourceMappingURL=StyledButton.js.map

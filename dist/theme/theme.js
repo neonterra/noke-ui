@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const theme = {
     colors: {
         primary: "#001761",
@@ -50,5 +52,5 @@ const theme = {
         headingXl: '2.25rem',
     },
 };
-export default theme;
+exports.default = theme;
 //# sourceMappingURL=theme.js.map

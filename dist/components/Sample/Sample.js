@@ -1,6 +1,8 @@
-import { jsx as _jsx } from "@emotion/react/jsx-runtime";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("@emotion/react/jsx-runtime");
 const Sample = () => {
-    return (_jsx("h1", { children: "I am a sample component 1." }));
+    return ((0, jsx_runtime_1.jsx)("h1", { children: "I am a sample component 1." }));
 };
-export default Sample;
+exports.default = Sample;
 //# sourceMappingURL=Sample.js.map

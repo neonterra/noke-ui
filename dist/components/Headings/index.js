@@ -1,10 +1,21 @@
-import withThemeProvider from '../../Providers/withThemeProvider';
-import { H1 as BaseH1, H2 as BaseH2, H3 as BaseH3, H4 as BaseH4, H5 as BaseH5, H6 as BaseH6 } from './Headings';
-const H1 = withThemeProvider(BaseH1);
-const H2 = withThemeProvider(BaseH2);
-const H3 = withThemeProvider(BaseH3);
-const H4 = withThemeProvider(BaseH4);
-const H5 = withThemeProvider(BaseH5);
-const H6 = withThemeProvider(BaseH6);
-export { H1, H2, H3, H4, H5, H6 };
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.H6 = exports.H5 = exports.H4 = exports.H3 = exports.H2 = exports.H1 = void 0;
+const withThemeProvider_1 = __importDefault(require("../../Providers/withThemeProvider"));
+const Headings_1 = require("./Headings");
+const H1 = (0, withThemeProvider_1.default)(Headings_1.H1);
+exports.H1 = H1;
+const H2 = (0, withThemeProvider_1.default)(Headings_1.H2);
+exports.H2 = H2;
+const H3 = (0, withThemeProvider_1.default)(Headings_1.H3);
+exports.H3 = H3;
+const H4 = (0, withThemeProvider_1.default)(Headings_1.H4);
+exports.H4 = H4;
+const H5 = (0, withThemeProvider_1.default)(Headings_1.H5);
+exports.H5 = H5;
+const H6 = (0, withThemeProvider_1.default)(Headings_1.H6);
+exports.H6 = H6;
 //# sourceMappingURL=index.js.map

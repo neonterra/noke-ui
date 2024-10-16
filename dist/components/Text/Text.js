@@ -1,37 +1,39 @@
-import { jsx as _jsx } from "@emotion/react/jsx-runtime";
-import { css, useTheme } from "@emotion/react";
-import { BODY_TEXT_LINE_HEIGHT } from "../../util/Typegraphy";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("@emotion/react/jsx-runtime");
+const react_1 = require("@emotion/react");
+const Typegraphy_1 = require("../../util/Typegraphy");
 const Text = ({ variant = "body-regular", children, color = "textPrimary", }) => {
-    const theme = useTheme();
+    const theme = (0, react_1.useTheme)();
     const getStyles = (variant) => {
         const selectedColor = theme.colors[color];
         switch (variant) {
             case "body-large":
-                return css `
+                return (0, react_1.css) `
           font-size: ${theme.typography.size.headingMd};
           font-weight: ${theme.typography.weight.normal};
-          line-height: ${BODY_TEXT_LINE_HEIGHT};
+          line-height: ${Typegraphy_1.BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             case "body-regular":
-                return css `
+                return (0, react_1.css) `
           font-size: ${theme.typography.size.bodyReg};
           font-weight: ${theme.typography.weight.normal};
-          line-height: ${BODY_TEXT_LINE_HEIGHT};
+          line-height: ${Typegraphy_1.BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             case "body-small":
-                return css `
+                return (0, react_1.css) `
           font-size: ${theme.typography.size.bodyRegSm};
           font-weight: ${theme.typography.weight.normal};
-          line-height: ${BODY_TEXT_LINE_HEIGHT};
+          line-height: ${Typegraphy_1.BODY_TEXT_LINE_HEIGHT};
           color: ${selectedColor};
         `;
             default:
-                return css ``;
+                return (0, react_1.css) ``;
         }
     };
-    return _jsx("p", { css: getStyles(variant), children: children });
+    return (0, jsx_runtime_1.jsx)("p", { css: getStyles(variant), children: children });
 };
-export default Text;
+exports.default = Text;
 //# sourceMappingURL=Text.js.map
